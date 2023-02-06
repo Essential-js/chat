@@ -1,0 +1,8 @@
+{
+	"name": "entities/socket-conexion",
+	"bundle": "start",
+	"platforms": "web",
+	"ts": {
+		"files": "*"
+	}
+}

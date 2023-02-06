@@ -17,6 +17,9 @@
 	"modules": {
 		"path": "modules"
 	},
+	"params": {
+		"server": "http://localhost:5000"
+	},
 	"deployment": {
 		"distributions": [
 			{
@@ -24,7 +27,7 @@
 				"environment": "development",
 				"platform": "web",
 				"ports": {
-					"bundles": 6530
+					"bundles": 3001
 				}
 			}
 		]

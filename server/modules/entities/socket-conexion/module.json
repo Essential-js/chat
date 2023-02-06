@@ -1,0 +1,9 @@
+{
+  "name": "entities/socket-conexion",
+  "ts": {
+    "path": "ts",
+    "files": [
+      "*"
+    ]
+  }
+}
