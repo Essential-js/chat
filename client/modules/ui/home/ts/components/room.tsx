@@ -1,28 +1,34 @@
 import React from 'react';
-import { room } from '@essential-js/client/entities/room';
+import { room as roomEntity } from '@essential-js/client/entities/room';
+import { useHomeContext } from '../context';
 
 export function Room() {
-	const [formValues, setFormValues] = React.useState({ name: '', room: '' });
+	const { user, setUser, setHasChatOpen, room, setRoom } = useHomeContext();
 
-	function onChange(event: { target: { value: string; name: string } }) {
-		const { name, value } = event.target;
-		setFormValues({ ...formValues, [name]: value });
+	function handleRoomChanges(event: { target: { value: string; name: string } }) {
+		const { value } = event.target;
+		setRoom(value);
+	}
+	function handleUserChanges(event: { target: { value: string; name: string } }) {
+		const { value } = event.target;
+		setUser({ username: value });
 	}
 
 	function onSubmit(event: { preventDefault: () => void }) {
 		event.preventDefault();
-		if (!formValues.name || !formValues.room) return;
-		room.join(formValues);
+		if (!user.username || !room) return;
+		roomEntity.join({ username: user.username, room });
+		setHasChatOpen(true);
 	}
 
 	return (
 		<form onSubmit={onSubmit} className="room">
 			<h3>ROOM</h3>
 			<label htmlFor="name">Name</label>
-			<input onChange={onChange} type="text" name="name" id="name" />
+			<input onChange={handleUserChanges} type="text" name="username" value={user.username} id="name" />
 
 			<label htmlFor="room">Room</label>
-			<input onChange={onChange} type="text" name="room" id="room" />
+			<input onChange={handleRoomChanges} type="text" name="room" id="room" value={room} />
 
 			<button>Join</button>
 		</form>

@@ -1,0 +1,10 @@
+{
+	"name": "hooks/use-binder",
+	"code": {
+		"hmr": true,
+		"ts": {
+			"path": "/code/ts",
+			"files": ["*"]
+		}
+	}
+}

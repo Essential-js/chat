@@ -21,6 +21,7 @@ export /*bundle*/ class SocketConexion {
 
 			console.log('CONNECTED', socket.id);
 			socket.on('join', this.#controller.join);
+			socket.on('send-message', this.#controller.sendMessages);
 		});
 	}
 }

@@ -1,0 +1,7 @@
+{
+	"name": "utils/reactive",
+	"ts": {
+		"path": "./ts",
+		"files": ["*"]
+	}
+}
