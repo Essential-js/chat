@@ -18,6 +18,7 @@ export class Controller {
 		const { room, username } = data;
 
 		this.#conexion.join(room);
+		this.#conexion.emit('user-joined');
 		this.#conexion.to(room).emit('user-joined', { username });
 	};
 

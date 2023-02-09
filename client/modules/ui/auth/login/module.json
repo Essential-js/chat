@@ -1,0 +1,18 @@
+{
+	"name": "login",
+	"widget": {
+		"is": "page",
+		"route": "/auth/login",
+		"element": {
+			"name": "login-page"
+		},
+		"sass": {
+			"path": "sass",
+			"files": ["*"]
+		},
+		"ts": {
+			"path": "ts",
+			"files": ["*"]
+		}
+	}
+}

@@ -1,0 +1,22 @@
+.page {
+	display: grid;
+	place-content: center;
+	min-height: 90vh;
+
+	.room {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		input {
+			font-size: 1rem;
+			padding: 0.2rem 0.5rem;
+		}
+
+		button {
+			background: rgb(32, 161, 193);
+			color: white;
+			padding: 0.5rem 2rem;
+		}
+	}
+}

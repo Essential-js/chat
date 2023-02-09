@@ -1,14 +1,9 @@
-import { socket } from '@essential-js/client/entities/socket-conexion';
+import { socket } from '@essential-js/client/socket-conexion';
 import { ReactiveModel } from '@essential-js/client/utils/reactive';
 import { Socket } from 'socket.io-client';
+import { IMessage } from '../interfaces/message';
 
-interface IMessage {
-	username: string;
-	content: string;
-	room: string;
-	date: Date;
-}
-class Messages extends ReactiveModel {
+export class Messages extends ReactiveModel {
 	#items: Array<IMessage | undefined>;
 
 	get items() {
@@ -34,5 +29,3 @@ class Messages extends ReactiveModel {
 		this.triggerEvent('messages-list-changed');
 	};
 }
-
-export /*bundle*/ const messages = new Messages();

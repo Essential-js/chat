@@ -1,7 +1,7 @@
 import React from 'react';
-import { room } from '@essential-js/client/entities/room';
+import { room } from '@essential-js/client/entities';
 import { useBinder } from '@essential-js/client/hooks/use-binder';
-import { socket } from '@essential-js/client/entities/socket-conexion';
+import { socket } from '@essential-js/client/socket-conexion';
 import { useHomeContext } from '../context';
 
 export function UsersList() {

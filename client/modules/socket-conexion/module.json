@@ -1,5 +1,5 @@
 {
-	"name": "entities/socket-conexion",
+	"name": "socket-conexion",
 	"bundle": "start",
 	"platforms": "web",
 	"ts": {

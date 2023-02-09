@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { messages } from '@essential-js/client/entities/messages';
+import { messages } from '@essential-js/client/entities';
 import { useBinder } from '@essential-js/client/hooks/use-binder';
-import { socket } from '@essential-js/client/entities/socket-conexion';
+import { socket } from '@essential-js/client/socket-conexion';
 import { useHomeContext } from '../../context';
 
 export function Chat() {
@@ -10,7 +10,7 @@ export function Chat() {
 	const [messagesList, setMessagesList] = React.useState(messages.items);
 
 	useEffect(() => {
-		socket.conexion.on('receive-message', messages.receive);
+		socket.getRoomMembers();
 	}, [socket]);
 
 	useBinder([messages], () => setMessagesList(messages.items), 'messages-list-changed');
